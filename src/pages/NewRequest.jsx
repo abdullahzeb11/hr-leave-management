@@ -7,8 +7,8 @@ export default function NewRequest() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-slate-900">{t.request.title}</h1>
-        <p className="mt-1 text-sm text-slate-500">{t.request.subtitle}</p>
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">{t.request.title}</h1>
+        <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{t.request.subtitle}</p>
       </div>
       <Card>
         <CardHeader title={t.request.title} subtitle={t.request.subtitle} />

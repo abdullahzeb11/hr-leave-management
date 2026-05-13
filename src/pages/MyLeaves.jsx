@@ -22,8 +22,8 @@ export default function MyLeaves() {
     <div className="space-y-6">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900">{t.nav.myLeaves}</h1>
-          <p className="mt-1 text-sm text-slate-500">{t.team.subtitle}</p>
+          <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">{t.nav.myLeaves}</h1>
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{t.team.subtitle}</p>
         </div>
         <Button leftIcon={<IconPlus className="h-4 w-4" />} onClick={() => setRoute('new')}>
           {t.nav.newRequest}
@@ -34,13 +34,15 @@ export default function MyLeaves() {
         <CardHeader
           title={t.nav.myLeaves}
           action={
-            <div className="flex gap-1 rounded-lg bg-slate-100 p-1">
+            <div className="flex gap-1 rounded-lg bg-slate-100 p-1 dark:bg-slate-800">
               {tabs.map(tk => (
                 <button
                   key={tk}
                   onClick={() => setTab(tk)}
                   className={`rounded-md px-3 py-1.5 text-xs font-medium transition ${
-                    tab === tk ? 'bg-white text-slate-900 shadow-soft' : 'text-slate-600 hover:text-slate-900'
+                    tab === tk
+                      ? 'bg-white text-slate-900 shadow-soft dark:bg-slate-700 dark:text-slate-100'
+                      : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100'
                   }`}
                 >
                   {t.common[tk]}

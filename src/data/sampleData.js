@@ -1,13 +1,13 @@
 // Realistic sample data for the HR system. Dates anchored around 2026-05.
 
 export const leaveTypeMeta = {
-  annual:      { color: 'bg-brand-100 text-brand-700',   dot: 'bg-brand-500',    quota: 21 },
-  sick:        { color: 'bg-rose-100 text-rose-700',     dot: 'bg-rose-500',     quota: 14 },
-  unpaid:      { color: 'bg-slate-100 text-slate-700',   dot: 'bg-slate-500',    quota: 30 },
-  maternity:   { color: 'bg-pink-100 text-pink-700',     dot: 'bg-pink-500',     quota: 70 },
-  paternity:   { color: 'bg-indigo-100 text-indigo-700', dot: 'bg-indigo-500',   quota: 5  },
-  bereavement: { color: 'bg-amber-100 text-amber-700',   dot: 'bg-amber-500',    quota: 5  },
-  hajj:        { color: 'bg-emerald-100 text-emerald-700', dot: 'bg-emerald-500', quota: 10 },
+  annual:      { color: 'bg-brand-100 text-brand-700 dark:bg-brand-500/15 dark:text-brand-300',         dot: 'bg-brand-500',    quota: 21 },
+  sick:        { color: 'bg-rose-100 text-rose-700 dark:bg-rose-500/15 dark:text-rose-300',             dot: 'bg-rose-500',     quota: 14 },
+  unpaid:      { color: 'bg-slate-100 text-slate-700 dark:bg-slate-700/50 dark:text-slate-200',         dot: 'bg-slate-500',    quota: 30 },
+  maternity:   { color: 'bg-pink-100 text-pink-700 dark:bg-pink-500/15 dark:text-pink-300',             dot: 'bg-pink-500',     quota: 70 },
+  paternity:   { color: 'bg-indigo-100 text-indigo-700 dark:bg-indigo-500/15 dark:text-indigo-300',     dot: 'bg-indigo-500',   quota: 5  },
+  bereavement: { color: 'bg-amber-100 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300',         dot: 'bg-amber-500',    quota: 5  },
+  hajj:        { color: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300', dot: 'bg-emerald-500',  quota: 10 },
 };
 
 export const departments = ['Engineering', 'Product', 'Design', 'People', 'Finance', 'Sales'];

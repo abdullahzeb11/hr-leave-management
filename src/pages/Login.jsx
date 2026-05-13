@@ -17,7 +17,7 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen grid lg:grid-cols-2 bg-slate-50">
+    <div className="min-h-screen grid lg:grid-cols-2 bg-slate-50 dark:bg-slate-950">
       {/* Left brand panel */}
       <div className="relative hidden lg:flex flex-col justify-between overflow-hidden bg-gradient-to-br from-brand-700 via-brand-600 to-indigo-700 p-10 text-white">
         <div className="absolute -top-32 -end-32 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
@@ -70,19 +70,19 @@ export default function Login() {
               <div className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 text-white">
                 <IconSparkle className="h-5 w-5" />
               </div>
-              <div className="font-bold text-slate-900">{t.appName}</div>
+              <div className="font-bold text-slate-900 dark:text-slate-100">{t.appName}</div>
             </div>
             <button
               onClick={() => setLang(lang === 'en' ? 'ar' : 'en')}
-              className="ms-auto inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 h-9 text-xs font-semibold text-slate-700 hover:bg-slate-50"
+              className="ms-auto inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 h-9 text-xs font-semibold text-slate-700 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
             >
-              <IconGlobe className="h-4 w-4 text-slate-500" />
+              <IconGlobe className="h-4 w-4 text-slate-500 dark:text-slate-400" />
               {lang === 'en' ? 'العربية' : 'English'}
             </button>
           </div>
 
-          <h2 className="text-2xl font-bold text-slate-900">{t.login.welcome}</h2>
-          <p className="mt-1.5 text-sm text-slate-500">{t.login.subtitle}</p>
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">{t.login.welcome}</h2>
+          <p className="mt-1.5 text-sm text-slate-500 dark:text-slate-400">{t.login.subtitle}</p>
 
           <form onSubmit={handle} className="mt-8 space-y-4">
             <Input
@@ -107,13 +107,13 @@ export default function Login() {
             </Button>
           </form>
 
-          <div className="mt-6 rounded-xl border border-slate-200 bg-slate-50 p-4">
-            <div className="text-xs font-semibold text-slate-700">{t.login.hint}</div>
-            <div className="mt-2 grid gap-1 text-xs text-slate-600">
+          <div className="mt-6 rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-900">
+            <div className="text-xs font-semibold text-slate-700 dark:text-slate-300">{t.login.hint}</div>
+            <div className="mt-2 grid gap-1 text-xs text-slate-600 dark:text-slate-400">
               <button
                 type="button"
                 onClick={() => { setEmail('layla@leavely.io'); setPassword('demo'); }}
-                className="flex items-center justify-between rounded-md p-1.5 hover:bg-white"
+                className="flex items-center justify-between rounded-md p-1.5 hover:bg-white dark:hover:bg-slate-800"
               >
                 <span>{t.login.employee}</span>
                 <span className="font-mono text-[11px]">layla@leavely.io</span>
@@ -121,7 +121,7 @@ export default function Login() {
               <button
                 type="button"
                 onClick={() => { setEmail('noura@leavely.io'); setPassword('demo'); }}
-                className="flex items-center justify-between rounded-md p-1.5 hover:bg-white"
+                className="flex items-center justify-between rounded-md p-1.5 hover:bg-white dark:hover:bg-slate-800"
               >
                 <span>{t.login.manager}</span>
                 <span className="font-mono text-[11px]">noura@leavely.io</span>

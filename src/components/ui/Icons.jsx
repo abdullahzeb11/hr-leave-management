@@ -49,3 +49,12 @@ export const IconMenu = (p) => (
 export const IconUpload = (p) => (
   <svg {...base} {...p}><path d="M4 13v3a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-3M10 3v10M6 7l4-4 4 4"/></svg>
 );
+export const IconSun = (p) => (
+  <svg {...base} {...p}><circle cx="10" cy="10" r="3.5"/><path d="M10 2v2M10 16v2M2 10h2M16 10h2M4.5 4.5l1.4 1.4M14.1 14.1l1.4 1.4M4.5 15.5l1.4-1.4M14.1 5.9l1.4-1.4"/></svg>
+);
+export const IconMoon = (p) => (
+  <svg {...base} {...p}><path d="M16 11.5A6 6 0 1 1 8.5 4a5 5 0 0 0 7.5 7.5z"/></svg>
+);
+export const IconMonitor = (p) => (
+  <svg {...base} {...p}><rect x="2.5" y="3.5" width="15" height="11" rx="1.5"/><path d="M7 17h6M10 14.5v2.5"/></svg>
+);

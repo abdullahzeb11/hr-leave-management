@@ -48,8 +48,8 @@ export default function CalendarPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-slate-900">{t.nav.calendar}</h1>
-        <p className="mt-1 text-sm text-slate-500">{isManager ? t.team.subtitle : t.nav.myLeaves}</p>
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">{t.nav.calendar}</h1>
+        <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{isManager ? t.team.subtitle : t.nav.myLeaves}</p>
       </div>
 
       <Card>
@@ -63,7 +63,7 @@ export default function CalendarPage() {
           }
         />
         <CardBody>
-          <div className="grid grid-cols-7 gap-2 text-center text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+          <div className="grid grid-cols-7 gap-2 text-center text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
             {dayHeaders.map(d => <div key={d}>{d}</div>)}
           </div>
           <div className="mt-2 grid grid-cols-7 gap-2">
@@ -74,12 +74,12 @@ export default function CalendarPage() {
                 <div
                   key={i}
                   className={`min-h-[88px] rounded-xl border p-2 text-start ${
-                    c ? 'bg-white border-slate-200' : 'border-transparent bg-transparent'
+                    c ? 'bg-white border-slate-200 dark:bg-slate-900 dark:border-slate-800' : 'border-transparent bg-transparent'
                   }`}
                 >
                   {c && (
                     <>
-                      <div className={`mb-1 text-xs font-semibold ${today ? 'text-brand-600' : 'text-slate-700'}`}>
+                      <div className={`mb-1 text-xs font-semibold ${today ? 'text-brand-600 dark:text-brand-300' : 'text-slate-700 dark:text-slate-300'}`}>
                         {c.getDate()}
                       </div>
                       <div className="space-y-1">
@@ -93,7 +93,7 @@ export default function CalendarPage() {
                           </div>
                         ))}
                         {items.length > 2 && (
-                          <div className="text-[10px] text-slate-500">+{items.length - 2}</div>
+                          <div className="text-[10px] text-slate-500 dark:text-slate-400">+{items.length - 2}</div>
                         )}
                       </div>
                     </>

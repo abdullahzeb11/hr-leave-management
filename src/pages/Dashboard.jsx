@@ -46,10 +46,10 @@ export default function Dashboard() {
       {/* Hero */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900">
+          <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
             {t.dashboard.hello}, <span className="text-brand-600">{user.name[lang].split(' ')[0]}</span> 👋
           </h1>
-          <p className="mt-1 text-sm text-slate-500">
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
             {t.dashboard.todayIs} {formatDate(today, lang)}
           </p>
         </div>
@@ -129,8 +129,8 @@ export default function Dashboard() {
                       <div className="flex items-center gap-2.5">
                         <Avatar user={m} size="sm" />
                         <div className="leading-tight">
-                          <div className="text-sm font-medium text-slate-900">{m.name[lang]}</div>
-                          <div className="text-[11px] text-slate-500">{m.title[lang]}</div>
+                          <div className="text-sm font-medium text-slate-900 dark:text-slate-100">{m.name[lang]}</div>
+                          <div className="text-[11px] text-slate-500 dark:text-slate-400">{m.title[lang]}</div>
                         </div>
                       </div>
                       <Badge tone={onLeave ? 'pending' : 'approved'}>
@@ -146,7 +146,7 @@ export default function Dashboard() {
               <CardHeader title={t.dashboard.upcoming} />
               <CardBody>
                 {upcoming.length === 0 ? (
-                  <p className="text-sm text-slate-500">{t.common.noResults}</p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">{t.common.noResults}</p>
                 ) : (
                   <ul className="space-y-3">
                     {upcoming.map(r => (
@@ -155,8 +155,8 @@ export default function Dashboard() {
                           <IconCalendar className="h-4 w-4" />
                         </span>
                         <div className="flex-1 leading-tight">
-                          <div className="text-sm font-medium text-slate-900">{t.leaveTypes[r.type]}</div>
-                          <div className="text-xs text-slate-500">
+                          <div className="text-sm font-medium text-slate-900 dark:text-slate-100">{t.leaveTypes[r.type]}</div>
+                          <div className="text-xs text-slate-500 dark:text-slate-400">
                             {formatDate(r.from, lang)} → {formatDate(r.to, lang)}
                           </div>
                         </div>

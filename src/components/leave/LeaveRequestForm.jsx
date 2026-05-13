@@ -70,11 +70,11 @@ export default function LeaveRequestForm({ onSubmitted }) {
 
         <div>
           <label className="label-base">{t.request.attach}</label>
-          <label className="flex cursor-pointer items-center gap-3 rounded-lg border border-dashed border-slate-300 bg-slate-50 px-4 py-5 text-sm text-slate-600 hover:bg-slate-100">
-            <IconUpload className="h-5 w-5 text-slate-400" />
+          <label className="flex cursor-pointer items-center gap-3 rounded-lg border border-dashed border-slate-300 bg-slate-50 px-4 py-5 text-sm text-slate-600 hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-800/40 dark:text-slate-300 dark:hover:bg-slate-800">
+            <IconUpload className="h-5 w-5 text-slate-400 dark:text-slate-500" />
             <div>
-              <div className="font-medium text-slate-700">Browse files</div>
-              <div className="text-xs text-slate-500">{t.request.attachHint}</div>
+              <div className="font-medium text-slate-700 dark:text-slate-200">Browse files</div>
+              <div className="text-xs text-slate-500 dark:text-slate-400">{t.request.attachHint}</div>
             </div>
             <input type="file" className="hidden" />
           </label>
@@ -82,24 +82,24 @@ export default function LeaveRequestForm({ onSubmitted }) {
       </div>
 
       <aside className="lg:col-span-1">
-        <div className="sticky top-24 rounded-2xl border border-slate-200 bg-gradient-to-br from-brand-50 to-white p-5 shadow-soft">
-          <h4 className="text-sm font-semibold text-slate-900">{t.request.summary}</h4>
+        <div className="sticky top-24 rounded-2xl border border-slate-200 bg-gradient-to-br from-brand-50 to-white p-5 shadow-soft dark:border-slate-800 dark:from-brand-500/10 dark:to-slate-900">
+          <h4 className="text-sm font-semibold text-slate-900 dark:text-slate-100">{t.request.summary}</h4>
           <dl className="mt-4 space-y-3 text-sm">
             <div className="flex items-center justify-between">
-              <dt className="text-slate-500">{t.common.type}</dt>
-              <dd className="font-medium text-slate-900">{type ? t.leaveTypes[type] : '—'}</dd>
+              <dt className="text-slate-500 dark:text-slate-400">{t.common.type}</dt>
+              <dd className="font-medium text-slate-900 dark:text-slate-100">{type ? t.leaveTypes[type] : '—'}</dd>
             </div>
             <div className="flex items-center justify-between">
-              <dt className="text-slate-500">{t.common.from}</dt>
-              <dd className="font-medium text-slate-900">{from ? formatDate(from, lang) : '—'}</dd>
+              <dt className="text-slate-500 dark:text-slate-400">{t.common.from}</dt>
+              <dd className="font-medium text-slate-900 dark:text-slate-100">{from ? formatDate(from, lang) : '—'}</dd>
             </div>
             <div className="flex items-center justify-between">
-              <dt className="text-slate-500">{t.common.to}</dt>
-              <dd className="font-medium text-slate-900">{to ? formatDate(to, lang) : '—'}</dd>
+              <dt className="text-slate-500 dark:text-slate-400">{t.common.to}</dt>
+              <dd className="font-medium text-slate-900 dark:text-slate-100">{to ? formatDate(to, lang) : '—'}</dd>
             </div>
-            <div className="flex items-center justify-between border-t border-slate-200 pt-3">
-              <dt className="text-slate-500">{t.request.duration}</dt>
-              <dd className="text-base font-bold text-brand-700">
+            <div className="flex items-center justify-between border-t border-slate-200 pt-3 dark:border-slate-700">
+              <dt className="text-slate-500 dark:text-slate-400">{t.request.duration}</dt>
+              <dd className="text-base font-bold text-brand-700 dark:text-brand-300">
                 {days} {days === 1 ? t.common.day : t.common.days}
               </dd>
             </div>

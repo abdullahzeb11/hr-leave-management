@@ -22,52 +22,52 @@ export default function Team() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-slate-900">{t.team.title}</h1>
-        <p className="mt-1 text-sm text-slate-500">{t.team.subtitle}</p>
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">{t.team.title}</h1>
+        <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{t.team.subtitle}</p>
       </div>
 
       <Card>
         <CardHeader title={t.team.title} subtitle={`${team.length} ${t.team.title.toLowerCase()}`} />
         <CardBody className="p-0">
-          <div className="grid gap-px bg-slate-100 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-px bg-slate-100 sm:grid-cols-2 lg:grid-cols-3 dark:bg-slate-800">
             {team.map(m => {
               const info = memberInfo(m);
               return (
-                <div key={m.id} className="bg-white p-5">
+                <div key={m.id} className="bg-white p-5 dark:bg-slate-900">
                   <div className="flex items-start gap-3">
                     <Avatar user={m} size="lg" />
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center justify-between gap-2">
-                        <div className="text-sm font-semibold text-slate-900 truncate">{m.name[lang]}</div>
+                        <div className="text-sm font-semibold text-slate-900 truncate dark:text-slate-100">{m.name[lang]}</div>
                         <Badge tone={info.onLeaveReq ? 'pending' : 'approved'}>
                           {info.onLeaveReq ? t.team.onLeave : t.team.available}
                         </Badge>
                       </div>
-                      <div className="text-xs text-slate-500">{m.title[lang]}</div>
-                      <div className="mt-1 text-[11px] text-slate-400">{m.department}</div>
+                      <div className="text-xs text-slate-500 dark:text-slate-400">{m.title[lang]}</div>
+                      <div className="mt-1 text-[11px] text-slate-400 dark:text-slate-500">{m.department}</div>
                     </div>
                   </div>
 
-                  <dl className="mt-4 space-y-2 border-t border-slate-100 pt-3 text-xs">
+                  <dl className="mt-4 space-y-2 border-t border-slate-100 pt-3 text-xs dark:border-slate-800">
                     {info.onLeaveReq && (
                       <div className="flex items-center justify-between">
-                        <dt className="text-slate-500">{t.team.onLeave}</dt>
-                        <dd className="font-medium text-slate-900">
+                        <dt className="text-slate-500 dark:text-slate-400">{t.team.onLeave}</dt>
+                        <dd className="font-medium text-slate-900 dark:text-slate-100">
                           {formatDate(info.onLeaveReq.from, lang)} → {formatDate(info.onLeaveReq.to, lang)}
                         </dd>
                       </div>
                     )}
                     {info.upcoming && (
                       <div className="flex items-center justify-between">
-                        <dt className="text-slate-500">{t.dashboard.upcoming}</dt>
-                        <dd className="font-medium text-slate-900">
+                        <dt className="text-slate-500 dark:text-slate-400">{t.dashboard.upcoming}</dt>
+                        <dd className="font-medium text-slate-900 dark:text-slate-100">
                           {formatDate(info.upcoming.from, lang)}
                         </dd>
                       </div>
                     )}
                     <div className="flex items-center justify-between">
-                      <dt className="text-slate-500">Email</dt>
-                      <dd className="font-mono text-[10px] text-slate-700 truncate">{m.email}</dd>
+                      <dt className="text-slate-500 dark:text-slate-400">Email</dt>
+                      <dd className="font-mono text-[10px] text-slate-700 truncate dark:text-slate-300">{m.email}</dd>
                     </div>
                   </dl>
                 </div>

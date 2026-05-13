@@ -38,8 +38,8 @@ export default function Approvals() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-slate-900">{t.approvals.title}</h1>
-        <p className="mt-1 text-sm text-slate-500">{t.approvals.subtitle}</p>
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">{t.approvals.title}</h1>
+        <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{t.approvals.subtitle}</p>
       </div>
 
       <Card>
@@ -47,7 +47,7 @@ export default function Approvals() {
         <CardBody className="p-0">
           {rows.length === 0 ? (
             <div className="p-10 text-center">
-              <p className="text-sm text-slate-500">{t.approvals.empty}</p>
+              <p className="text-sm text-slate-500 dark:text-slate-400">{t.approvals.empty}</p>
             </div>
           ) : (
             <LeaveTable

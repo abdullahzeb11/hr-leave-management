@@ -6,10 +6,12 @@ const AppContext = createContext(null);
 
 const LANG_KEY = 'leavely.lang';
 const USER_KEY = 'leavely.userId';
+const THEME_KEY = 'leavely.theme';
 
 export function AppProvider({ children }) {
   const [lang, setLang] = useState(() => localStorage.getItem(LANG_KEY) || 'en');
   const [userId, setUserId] = useState(() => localStorage.getItem(USER_KEY) || null);
+  const [theme, setTheme] = useState(() => localStorage.getItem(THEME_KEY) || 'system');
   const [requests, setRequests] = useState(initialRequests);
   const [route, setRoute] = useState('dashboard');
   const [toast, setToast] = useState(null);
@@ -21,6 +23,22 @@ export function AppProvider({ children }) {
     document.documentElement.setAttribute('lang', lang);
     localStorage.setItem(LANG_KEY, lang);
   }, [lang]);
+
+  // Apply theme (light/dark/system) to <html class="dark">
+  useEffect(() => {
+    const root = document.documentElement;
+    const mq = window.matchMedia('(prefers-color-scheme: dark)');
+    const apply = () => {
+      const isDark = theme === 'dark' || (theme === 'system' && mq.matches);
+      root.classList.toggle('dark', isDark);
+    };
+    apply();
+    localStorage.setItem(THEME_KEY, theme);
+    if (theme === 'system') {
+      mq.addEventListener('change', apply);
+      return () => mq.removeEventListener('change', apply);
+    }
+  }, [theme]);
 
   useEffect(() => {
     if (userId) localStorage.setItem(USER_KEY, userId);
@@ -79,6 +97,7 @@ export function AppProvider({ children }) {
 
   const value = {
     lang, setLang, t,
+    theme, setTheme,
     user: currentUser, isAuthed: !!currentUser,
     login, logout,
     users,
